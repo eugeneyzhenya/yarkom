@@ -1,0 +1,318 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Ростислав Ярком | Художник, графический дизайнер</title>
+    <meta name="description" content="Художественная роспись в интерьере и экстерьере. Аэрография, интерьерные картины, барельеф, графический дизайн, цифровая иллюстрация.">
+    <meta name="robots" content="index, follow">
+
+    <!-- Шрифты -->
+    <link href="https://fonts.googleapis.com/css?family=Roboto:400,500,700&display=swap" rel="stylesheet">
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Roboto', sans-serif;
+            background-color: #181e21;
+            color: #fff;
+        }
+
+        /* Основной контейнер */
+        .page-home {
+            max-width: 600px;
+            margin: 0 auto;
+            background-color: #181e21;
+            min-height: 100vh;
+        }
+
+        /* Шапка с аватаром */
+        .vcard-header {
+            position: relative;
+            background: linear-gradient(135deg, #181e21 0%, #2a2f33 100%);
+            padding-bottom: 20px;
+        }
+
+        .avatar-container {
+            width: 120px;
+            height: 120px;
+            border-radius: 50%;
+            margin: 0 auto;
+            background-size: cover !important;
+            background-position: center !important;
+            border: 3px solid #0ec82a;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+        }
+
+        .event-content-container {
+            text-align: center;
+            padding: 20px;
+        }
+
+        .event-title {
+            font-size: 28px;
+            font-weight: 700;
+            margin-top: 15px;
+            color: #fff;
+        }
+
+        .event-teaser {
+            font-size: 16px;
+            color: #ccc;
+            margin-top: 8px;
+        }
+
+        /* Кнопки-каналы */
+        .event-body {
+            padding: 20px;
+        }
+
+        .channel-container {
+            display: flex;
+            align-items: center;
+            background-color: #2a2f33;
+            border-radius: 50px;
+            padding: 8px 20px;
+            margin-bottom: 12px;
+            text-decoration: none;
+            transition: transform 0.2s, background-color 0.2s;
+            cursor: pointer;
+        }
+
+        .channel-container:hover {
+            transform: translateY(-2px);
+            background-color: #3a3f44;
+        }
+
+        /* Иконки соцсетей */
+        .channel-bgd-Telegram,
+        .channel-bgd-WhatsApp,
+        .channel-bgd-VKontakte,
+        .channel-bgd-Messenger {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-right: 15px;
+        }
+
+        .channel-bgd-Telegram { background: #26A5E4; }
+        .channel-bgd-WhatsApp { background: #25D366; }
+        .channel-bgd-VKontakte { background: #4680C2; }
+        .channel-bgd-Messenger { background: #0084FF; }
+
+        .icon-social-telegram,
+        .icon-social-whatsapp,
+        .icon-social-vkontakte,
+        .icon-social-messenger {
+            width: 24px;
+            height: 24px;
+            background-size: contain;
+            background-repeat: no-repeat;
+            background-position: center;
+            display: inline-block;
+        }
+
+        .icon-social-telegram { background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='white'%3E%3Cpath d='M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm4.64 6.8c-.15 1.58-.8 5.42-1.13 7.19-.14.75-.42 1-.68 1.03-.58.05-1.02-.38-1.58-.75-.88-.58-1.38-.94-2.23-1.5-.99-.66-.35-1.02.22-1.61.15-.15 2.71-2.48 2.76-2.69.01-.03.01-.13-.06-.18-.07-.05-.17-.03-.25-.01-.11.02-1.86 1.18-5.26 3.48-.5.34-.95.51-1.36.5-.45-.01-1.31-.25-1.95-.46-.78-.25-1.4-.38-1.35-.8.03-.22.33-.45.91-.68 3.57-1.55 5.95-2.57 7.14-3.07 3.4-1.42 4.11-1.67 4.57-1.68.1 0 .33.02.48.15.12.11.15.26.17.38.02.16.02.32 0 .5z'/%3E%3C/svg%3E"); }
+        .icon-social-whatsapp { background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='white'%3E%3Cpath d='M12.04 2c-5.46 0-9.91 4.45-9.91 9.91 0 1.75.46 3.45 1.32 4.95L2.05 22l5.25-1.38c1.45.79 3.08 1.21 4.74 1.21 5.46 0 9.91-4.45 9.91-9.91 0-5.46-4.45-9.91-9.91-9.91zm0 18.23c-1.49 0-2.95-.4-4.2-1.16l-.3-.18-3.12.82.83-3.04-.2-.31c-.84-1.29-1.28-2.79-1.28-4.32 0-4.51 3.67-8.18 8.18-8.18 4.51 0 8.18 3.67 8.18 8.18.01 4.5-3.66 8.19-8.17 8.19zm4.49-6.13c-.25-.12-1.47-.73-1.7-.81-.23-.08-.4-.12-.57.12-.17.24-.66.81-.81.98-.15.17-.3.19-.55.06-.25-.12-1.05-.39-2-.96-1.11-.66-1.85-1.47-2.06-1.72-.22-.25-.02-.38.16-.51.16-.12.36-.28.54-.42.18-.14.24-.24.36-.4.12-.16.06-.3-.03-.42-.09-.12-.57-1.38-.78-1.89-.21-.5-.42-.42-.57-.43h-.49c-.17 0-.45.06-.69.31-.24.25-.92.9-.92 2.19 0 1.29.94 2.54 1.07 2.71.13.17 1.85 2.83 4.48 3.97.63.27 1.12.43 1.5.55.63.2 1.2.17 1.66.1.51-.08 1.47-.6 1.68-1.18.21-.58.21-1.08.15-1.18-.06-.11-.22-.17-.47-.29z'/%3E%3C/svg%3E"); }
+        .icon-social-vkontakte { background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='white'%3E%3Cpath d='M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm6.45 11.94c-.21.52-.82.82-1.34.99-.52.17-2.21.44-4.66.44-2.44 0-3.78-.19-4.65-.44-.52-.17-1.13-.47-1.34-.99-.23-.58-.28-1.52-.28-2.44s.05-1.86.28-2.44c.21-.52.82-.82 1.34-.99.87-.25 2.21-.44 4.65-.44 2.44 0 3.78.19 4.65.44.52.17 1.13.47 1.34.99.23.58.28 1.52.28 2.44s-.05 1.86-.28 2.44z'/%3E%3C/svg%3E"); }
+        .icon-social-messenger { background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='white'%3E%3Cpath d='M12 2C6.48 2 2 6.48 2 12c0 1.86.47 3.62 1.31 5.16L2 22l4.84-1.31C8.38 21.53 10.14 22 12 22c5.52 0 10-4.48 10-10S17.52 2 12 2zm1.2 13.5l-2.2-2.2-4.3 2.2 4.3-4.7 2.2 2.2 4.3-2.2-4.3 4.7z'/%3E%3C/svg%3E"); }
+
+        .channel-name {
+            font-size: 18px;
+            font-weight: 500;
+            color: #fff;
+        }
+
+        .channel-label {
+            font-size: 13px;
+            color: #aaa;
+            margin-top: 2px;
+        }
+
+        /* Кнопка Share */
+        .share-container {
+            margin-top: 30px;
+            text-align: center;
+        }
+
+        .fab {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+            background-color: #0ec82a;
+            padding: 12px 24px;
+            border-radius: 50px;
+            color: white;
+            text-decoration: none;
+            font-weight: 500;
+            transition: background 0.2s, transform 0.2s;
+            cursor: pointer;
+            border: none;
+        }
+
+        .fab:hover {
+            background-color: #0ab022;
+            transform: translateY(-2px);
+        }
+
+        .icon-fab-share:before {
+            content: "📤";
+            margin-right: 5px;
+        }
+
+        /* Попап для копирования */
+        .copy-message {
+            position: fixed;
+            bottom: 30px;
+            left: 50%;
+            transform: translateX(-50%);
+            background-color: #0ec82a;
+            color: white;
+            padding: 10px 20px;
+            border-radius: 30px;
+            font-size: 14px;
+            z-index: 1000;
+            opacity: 0;
+            transition: opacity 0.3s;
+            pointer-events: none;
+        }
+
+        .copy-message.show {
+            opacity: 1;
+        }
+
+        /* Адаптив */
+        @media (max-width: 480px) {
+            .event-title {
+                font-size: 24px;
+            }
+            .avatar-container {
+                width: 100px;
+                height: 100px;
+            }
+            .channel-container {
+                padding: 6px 16px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="page-home">
+        <div class="vcard-header">
+            <div class="avatar-container" style="background-image: url('https://qrcgcustomers.s3-eu-west-1.amazonaws.com/account49962028/58007452_1.png?0.615705442359963');"></div>
+            <div class="event-content-container">
+                <div class="event-title">Ростислав Ярком</div>
+                <div class="event-teaser">Художественная роспись и декор</div>
+            </div>
+        </div>
+
+        <div class="event-body">
+            <!-- Telegram -->
+            <a href="https://t.me/rostislav_yarkom" target="_blank" class="channel-container">
+                <div class="channel-bgd-Telegram">
+                    <i class="icon-social-telegram"></i>
+                </div>
+                <div>
+                    <div class="channel-name">Telegram</div>
+                    <div class="channel-label">@rostislav_yarkom</div>
+                </div>
+            </a>
+
+            <!-- WhatsApp -->
+            <a href="https://wa.me/79603533159" target="_blank" class="channel-container">
+                <div class="channel-bgd-WhatsApp">
+                    <i class="icon-social-whatsapp"></i>
+                </div>
+                <div>
+                    <div class="channel-name">WhatsApp</div>
+                    <div class="channel-label">+7 960 353-31-59</div>
+                </div>
+            </a>
+
+            <!-- VKontakte -->
+            <a href="https://vk.com/rostislavyarkom" target="_blank" class="channel-container">
+                <div class="channel-bgd-VKontakte">
+                    <i class="icon-social-vkontakte"></i>
+                </div>
+                <div>
+                    <div class="channel-name">VKontakte</div>
+                    <div class="channel-label">rostislavyarkom</div>
+                </div>
+            </a>
+
+            <!-- Messenger -->
+            <a href="https://m.me/rostislavyarkom" target="_blank" class="channel-container">
+                <div class="channel-bgd-Messenger">
+                    <i class="icon-social-messenger"></i>
+                </div>
+                <div>
+                    <div class="channel-name">Messenger</div>
+                    <div class="channel-label">Написать в Facebook Messenger</div>
+                </div>
+            </a>
+
+            <!-- Кнопка поделиться -->
+            <div class="share-container">
+                <button class="fab" id="shareButton">
+                    <i class="icon-fab-share"></i> Поделиться страницей
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <div class="copy-message" id="copyMessage">Ссылка скопирована! 🔗</div>
+
+    <script>
+        // Данные для шаринга
+        const pageUrl = window.location.href;
+
+        // Кнопка Share
+        document.getElementById('shareButton').addEventListener('click', function() {
+            if (navigator.share) {
+                // Для мобильных устройств с Web Share API
+                navigator.share({
+                    title: 'Ростислав Ярком',
+                    text: 'Художественная роспись и декор',
+                    url: pageUrl
+                }).catch(err => {
+                    console.log('Ошибка:', err);
+                });
+            } else {
+                // Fallback - копируем ссылку
+                copyToClipboard(pageUrl);
+            }
+        });
+
+        // Функция копирования в буфер
+        function copyToClipboard(text) {
+            const textarea = document.createElement('textarea');
+            textarea.value = text;
+            document.body.appendChild(textarea);
+            textarea.select();
+            document.execCommand('copy');
+            document.body.removeChild(textarea);
+
+            // Показываем уведомление
+            const msg = document.getElementById('copyMessage');
+            msg.classList.add('show');
+            setTimeout(() => {
+                msg.classList.remove('show');
+            }, 2000);
+        }
+
+        // Обработка кликов по ссылкам (открывать в новой вкладке)
+        document.querySelectorAll('.channel-container').forEach(link => {
+            link.setAttribute('target', '_blank');
+        });
+    </script>
+</body>
+</html>
