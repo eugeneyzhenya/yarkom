@@ -29,32 +29,31 @@
             min-height: 100vh;
         }
         
+        /* ПРЯМОУГОЛЬНАЯ ОБЛОЖКА ВО ВСЮ ШИРИНУ */
+        .cover-image {
+            width: 100%;
+            height: auto;
+            display: block;
+            object-fit: cover;
+            max-height: 300px;
+        }
+        
+        /* Контент после обложки */
         .vcard-header {
             position: relative;
             background: linear-gradient(135deg, #181e21 0%, #2a2f33 100%);
-            padding-bottom: 20px;
-        }
-        
-        .avatar-container {
-            width: 120px;
-            height: 120px;
-            border-radius: 50%;
-            margin: 0 auto;
-            background-size: cover !important;
-            background-position: center !important;
-            border: 3px solid #0ec82a;
-            box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+            padding: 20px 0 20px 0;
         }
         
         .event-content-container {
             text-align: center;
-            padding: 20px;
+            padding: 10px 20px 20px 20px;
         }
         
         .event-title {
             font-size: 28px;
             font-weight: 700;
-            margin-top: 15px;
+            margin-top: 10px;
             color: #fff;
         }
         
@@ -106,7 +105,6 @@
         .channel-bgd-VKontakte { background: #1976d2; }
         .channel-bgd-MAX { background: transparent; }
         
-        /* У MAX градиентный фон, поэтому убираем стандартный цвет */
         .channel-bgd-MAX {
             background: linear-gradient(135deg, #4cf 0%, #53e 66%, #93d 100%);
         }
@@ -176,17 +174,19 @@
         
         @media (max-width: 480px) {
             .event-title { font-size: 24px; }
-            .avatar-container { width: 100px; height: 100px; }
             .channel-container { padding: 6px 16px; }
             .channel-icon { width: 40px; height: 40px; }
             .channel-icon svg { width: 24px; height: 24px; }
+            .cover-image { max-height: 200px; }
         }
     </style>
 </head>
 <body>
     <div class="page-home">
+        <!-- ПРЯМОУГОЛЬНАЯ ОБЛОЖКА НА ВСЮ ШИРИНУ -->
+        <img class="cover-image" src="https://qrcgcustomers.s3-eu-west-1.amazonaws.com/account49962028/58007371_1.png?0.19758311887140478" alt="Обложка Ростислав Ярком">
+        
         <div class="vcard-header">
-            <div class="avatar-container" style="background-image: url('https://qrcgcustomers.s3-eu-west-1.amazonaws.com/account49962028/58007452_1.png?0.615705442359963');"></div>
             <div class="event-content-container">
                 <div class="event-title">Ростислав Ярком</div>
                 <div class="event-teaser">Художественная роспись и декор</div>
@@ -220,7 +220,7 @@
                 </div>
             </a>
             
-            <!-- VKontakte (ОФИЦИАЛЬНАЯ ИКОНКА) -->
+            <!-- VKontakte -->
             <a href="https://vk.com/rostislavyarkom" target="_blank" class="channel-container">
                 <div class="channel-icon channel-bgd-VKontakte">
                     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48" width="28" height="28">
@@ -234,7 +234,7 @@
                 </div>
             </a>
             
-            <!-- MAX (ОФИЦИАЛЬНАЯ ИКОНКА с градиентом) -->
+            <!-- MAX -->
             <a href="https://max.ru/u/f9LHodD0cOKFW_rFgBiBFIQhpFevtsfprdDgTQwaVyYDt_6wsfhufDaDmhg" target="_blank" class="channel-container">
                 <div class="channel-icon channel-bgd-MAX">
                     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 1000" width="28" height="28">
